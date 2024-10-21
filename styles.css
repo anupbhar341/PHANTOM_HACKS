@@ -8,7 +8,7 @@ html {
 }
 body {
     font-family: 'Creepster', cursive;
-    background: url('images/multi-halloween-night.jpg') no-repeat center center/cover;
+    background: url('multi-halloween-night.jpg') no-repeat center center/cover;
     background-size: cover;
     color: #fff;
     min-height: 100vh;
