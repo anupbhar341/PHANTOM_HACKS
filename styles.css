@@ -1,0 +1,549 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
+}
+body {
+    font-family: 'Creepster', cursive;
+    background: url('images/multi-halloween-night.jpg') no-repeat center center/cover;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+    margin: 0;
+    scrollbar-width: 0;
+}
+body::-webkit-scrollbar {
+    display: none;
+}
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 0;
+}
+.container {
+    position: relative;
+    text-align: center;
+    min-height: 100vh;
+    padding: 20px;
+    z-index: 0;
+}
+.home {
+    padding: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    z-index: 0;
+}
+.header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 10px 20px;
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+}
+.logo {
+    font-family: 'Creepster', cursive;
+    font-size: 2rem;
+    color: #f67280;
+    text-decoration: none;
+    animation: slideLeft 1s ease forwards;
+}
+.logo:hover, .logo:focus {
+    color: white;
+    transform: scaleX(1.1) translateX(0);
+}
+.navbar a {
+    color: white;
+    margin-left: 20px;
+    text-decoration: none;
+    font-size: 1.2rem;
+    font-family: 'Nosifer', cursive;
+    transition: 0.3s all;
+    animation: navMenu 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    opacity: 0;
+}
+.navbar a:hover, .navbar #active {
+    color: #f67280;
+    transform: scaleX(1.1) translateX(0);
+}
+section {
+    position: relative;
+    padding: 100px 20px 40px 20px;
+    margin: 20px 0;
+    color: #fff;
+}
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1001;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    text-align: center;
+    font-family: 'Georgia', serif;
+    font-size: 1.2rem;
+}
+.tooltip {
+    position: absolute;
+    background: #ff6f61;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: none;
+    z-index: 1;
+    font-family: 'Georgia', serif;
+    font-size: 0.9rem;
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+.close:hover, .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+#about p, #costumes p {
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #fff;
+}
+#about ul, #history ul, #costumes ul {
+    list-style-type: disc;
+    padding-left: 20px;
+    font-family: 'Arial', sans-serif;
+    color: #fff;
+}
+#about li, #history li, #costumes li {
+    font-size: 1rem;
+    line-height: 1.5;
+}
+#about strong, #history strong, #costumes strong {
+    font-weight: bold;
+    color: #ff6f61;
+}
+#about::before, #history::before, #costumes::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: -1;
+}
+#about h2, #history h2, #costumes h2, #about p, #history p, #costumes p {
+    position: relative;
+    z-index: 0;
+}
+hr {
+    border: 1px solid #f67280;
+    margin: 10px 0;
+    z-index: 0;
+}
+h1 {
+    font-family: 'Nosifer', cursive;
+    font-size: 3rem;
+    color: #f67280;
+    z-index: 0;
+}
+h2 {
+    font-family: 'Nosifer', cursive;
+    font-size: 2rem;
+    color: #f67280;
+    margin-bottom: 10px;
+    z-index: 0;
+}
+h3 {
+    font-family: 'Georgia', serif;
+    font-size: 1.25rem;
+    margin: 10px 0;
+    z-index: 0;
+}
+ul {
+    padding: 0;
+    text-align: justify;
+    z-index: 0;
+}
+li {
+    text-decoration: none;
+    list-style-type: none;
+    padding-left: 0;
+    z-index: 0;
+}
+p {
+    font-size: 1.2rem;
+    margin: 20px 0;
+    text-align: justify;
+    z-index: 0;
+}
+button {
+    padding: 10px 20px;
+    font-size: 1.2rem;
+    font-weight: 900;
+    background-color: #ff6f61;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    cursor: pointer;
+    animation: spin 1s linear;
+}
+button:hover {
+    background-color: #d94a38;
+    transition: 0.3s;
+}
+.interactive-section {
+    margin-top: 50px;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 30px;
+    border-radius: 10px;
+    z-index: 0;
+}
+.pumpkins {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 30px;
+}
+.pumpkin {
+    font-size: 3rem;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+    animation: spin 1s linear;
+}
+.pumpkin:hover {
+    transform: scale(1.3);
+    transition: 0.3s ease-in-out;
+}
+@keyframes slideLeft {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+@keyframes navMenu {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+.centered-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    letter-spacing: 3px;
+}
+.centered-text h3 {
+    font-family: 'Creepster', cursive;
+    color: #fff;
+    font-size: 1.5rem;
+}
+.contact-section {
+    position: relative;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 1000;
+}
+.contact-left {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    flex-basis: 35%;
+    text-align: center;
+    padding-top: 20px;
+    z-index: 0;
+}
+.contact-right {
+    flex-basis: 60%;
+    z-index: 0;
+}
+.contact-left p {
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.contact-left p i {
+    color: #ff004f;
+    margin-right: 10px;
+    font-size: 25px;
+}
+.social-icons {
+    margin-top: 30px;
+}
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #f9f8f8;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover {
+    color: #ff004f;
+    transform: translateY(-5px);
+}
+.btn {
+    display: inline-block;
+    background: #ff004f;
+    padding: 14px 60px;
+    font-size: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+.btn:hover {
+    background-color: #d94a38;
+}
+.contact-right form {
+    width: 100%;
+}
+form input,
+form textarea {
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #f67280;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 20px;
+    border-radius: 6px;
+}
+#msg {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: rgb(51, 250, 51);
+}
+footer {
+    width: 100%;
+    padding: 10px 20px;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 1);
+    font-weight: 300;
+    margin-top: 20px;
+    color: white;
+}
+footer i {
+    color: #ff004f;
+}
+
+/* Media queries for responsiveness */
+/* General Mobile Styles */
+@media (max-width: 768px) {
+    .header, .footer {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .home, .about, .history, .costumes, .contact-section {
+        padding: 20px 10px;
+        margin: 10px 0;
+        font-size: 1rem;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    .pumpkins {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .pumpkin {
+        font-size: 2rem;
+    }
+
+    .contact-left p {
+        font-size: 1rem;
+    }
+
+    .social-icons a {
+        font-size: 1.5rem;
+    }
+
+    form input, form textarea {
+        font-size: 1rem;
+    }
+
+    button, .btn {
+        padding: 10px 20px;
+        font-size: 1rem;
+    }
+}
+
+/* Tablet Styles */
+@media (min-width: 769px) and (max-width: 1024px) {
+    .header, .footer {
+        padding: 15px;
+        font-size: 1.2rem;
+    }
+
+    .home, .about, .history, .costumes, .contact-section {
+        padding: 30px 15px;
+        margin: 15px 0;
+        font-size: 1.2rem;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+    }
+
+    .pumpkins {
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .pumpkin {
+        font-size: 2.5rem;
+    }
+
+    .contact-left p {
+        font-size: 1.1rem;
+    }
+
+    .social-icons a {
+        font-size: 2rem;
+    }
+
+    form input, form textarea {
+        font-size: 1.1rem;
+    }
+
+    button, .btn {
+        padding: 12px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+/* Desktop Styles */
+@media (min-width: 1025px) {
+    .header, .footer {
+        padding: 20px;
+        font-size: 1.4rem;
+    }
+
+    .home, .about, .history, .costumes, .contact-section {
+        padding: 40px 20px;
+        margin: 20px 0;
+        font-size: 1.4rem;
+    }
+
+    h1 {
+        font-size: 3rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.6rem;
+    }
+
+    .pumpkins {
+        flex-direction: row;
+        gap: 25px;
+    }
+
+    .pumpkin {
+        font-size: 3rem;
+    }
+
+    .contact-left p {
+        font-size: 1.2rem;
+    }
+
+    .social-icons a {
+        font-size: 2.5rem;
+    }
+
+    form input, form textarea {
+        font-size: 1.2rem;
+    }
+
+    button, .btn {
+        padding: 14px 30px;
+        font-size: 1.2rem;
+    }
+}

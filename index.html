@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Halloween || By Anup</title>
+    <link rel="icon" type="image/png" href="images/favicon.png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Creepster&family=Nosifer&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/3e4dddc1db.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="overlay">
+      <header class="header">
+        <a href="#home" class="logo">Halloween🎃</a>
+        <nav class="navbar">
+          <a href="#home" id="active" style="--i: 1">Home</a>
+          <a href="#about" style="--i: 2">About</a>
+          <a href="#history" style="--i: 3">History</a>
+          <a href="#costumes" style="--i: 4">Costumes</a>
+          <a href="#contact" style="--i: 5">Contact</a>
+        </nav>
+      </header>
+    </div>
+
+    <div class="container">
+      <!-- HOME SECTION -->
+      <section id="home" class="section home">
+        <h1>👻Welcome to the Haunted Night👻</h1>
+        <div class="centered-text">
+          <h3>Get ready to experience chills and thrills this Halloween!</h3>
+        </div>
+        <button id="exploreBtn">Explore If You Dare</button>
+        <!-- Modal structure -->
+        <div id="myModal tooltip" class="modal">
+          <div class="modal-content">
+            <span class="close">&times;</span>
+            <p>
+              Welcome to the spooky section! Scroll down to discover some spooky
+              surprises.
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="interactive-section" id="interactiveSection">
+        <h2>Spooky Facts</h2>
+        <div class="centered-text">
+          <h3>Hover over the pumpkins to reveal spooky surprises...</h3>
+        </div>
+        <div class="pumpkins">
+          <div class="pumpkin" data-surprise="👻 Boo! A Ghost!🥶">🎃</div>
+          <div class="pumpkin" data-surprise="🕸 Spiders lurking!🕷️">🎃</div>
+          <div class="pumpkin" data-surprise="🦇 Bats flying!🦇">🎃</div>
+        </div>
+      </section>
+
+      <!-- ABOUT SECTION -->
+      <section id="about" class="section about fade-in">
+        <h2>👻 Important facts about Halloween Night 👻</h2>
+        <p>
+          Halloween, a holiday observed on October 31 and noted for its pagan
+          and religious roots and secular traditions. In much of Europe and most
+          of North America, observance of Halloween is largely nonreligious,
+          celebrated with parties, spooky costumes, jack-o'-lanterns, pumpkin
+          carvings, and the giving of candy. But the holiday also marks the
+          beginning of Allhallotide, a three-day Christian triduum dedicated to
+          remembering the dead that begins with Halloween (October 31) and is
+          followed by All Saints' Day (November 1) and All Souls' Day (November
+          2).
+        </p>
+      </section>
+      <hr />
+
+      <!-- HISTORY SECTION -->
+      <section id="history" class="section history fade-in">
+        <h2>👻 History Behind The Halloween Night 👻</h2>
+
+        <h3>🎃 Christian Origins and Historic Customs</h3>
+        <ul>
+          <li>
+            <strong>Origins:</strong> Halloween has roots in Christian practices
+            and pagan customs. The term “Halloween” is derived from “All
+            Hallows' Eve,” the night before All Saints' Day (1 November) and All
+            Souls' Day (2 November), collectively called Allhallowtide.
+          </li>
+
+          <li>
+            <strong>Early Traditions:</strong> Major feasts like All Hallows'
+            had vigils the night before. Pope Gregory III established the feast
+            of All Saints in the 8th century, and by 835, the 1st of November
+            became the official date in the Frankish Empire.
+          </li>
+
+          <li>
+            <strong>Customs:</strong> In the Middle Ages, people dressed as
+            saints or spirits to avoid recognition by wandering souls. The
+            custom of "souling" involved going door-to-door collecting soul
+            cakes in exchange for prayers.
+          </li>
+
+          <li>
+            <strong>Later Observances:</strong> Halloween saw changes during the
+            Reformation, with Protestant beliefs clashing with Catholic
+            traditions. By the 19th century, customs included lighting candles
+            at graves and leaving food for wandering souls.
+          </li>
+
+          <li>
+            <strong>Cultural Impact:</strong> Many customs, such as wearing
+            costumes, carving jack-o'-lanterns, and lighting candles, evolved
+            but remain tied to honoring the dead and protecting the living from
+            spirits.
+          </li>
+        </ul>
+
+        <h3>🎃 Gaelic Folk Influence</h3>
+        <ul>
+          <li>
+            <strong>Celtic Origins:</strong> Halloween customs are tied to the
+            Gaelic festival of Samhain, marking the end of harvest and the start
+            of winter, a time when the boundary between this world and the
+            Otherworld thinned.
+          </li>
+
+          <li>
+            <strong>Pagan and Christian Blending:</strong> Offerings of food and
+            drink were left for spirits and the souls of the dead, believed to
+            revisit their homes. These traditions blended with Christian
+            beliefs.
+          </li>
+
+          <li>
+            <strong>Divination and Bonfires:</strong> Samhain involved rituals
+            and games that foretold the future. Special bonfires were lit for
+            protection and to ward off evil spirits.
+          </li>
+
+          <li>
+            <strong>Costumes and Guising:</strong> Since the 16th century,
+            mumming and guising involved going house-to-house in disguise to
+            sing or recite verses in exchange for food.
+          </li>
+
+          <li>
+            <strong>Pranks and Lanterns:</strong> By the 18th century, playing
+            pranks linked to imitating spirits became common. Lanterns carved
+            from turnips or pumpkins became known as jack-o'-lanterns.
+          </li>
+        </ul>
+
+        <h3>🎃 Spread to North America</h3>
+        <ul>
+          <li>
+            <strong>Colonial Recognition:</strong> Anglican colonists in the
+            southern U.S. and Catholic colonists in Maryland acknowledged All
+            Hallows' Eve, while Puritans opposed it.
+          </li>
+
+          <li>
+            <strong>Irish and Scottish Influence:</strong> Halloween became a
+            major holiday in America after Irish and Scottish immigrants brought
+            their customs in the 19th century.
+          </li>
+
+          <li>
+            <strong>Spread Across America:</strong> By the early 20th century,
+            Halloween gained acceptance across various social, racial, and
+            religious groups in the U.S.
+          </li>
+
+          <li>
+            <strong>Global Spread:</strong> American Halloween traditions spread
+            to Europe and parts of the Far East in the late 20th and early 21st
+            centuries due to U.S. cultural influence.
+          </li>
+        </ul>
+      </section>
+      <hr />
+
+      <!-- COSTUMES SECTION -->
+      <section id="costumes" class="section costumes fade-in">
+        <h2>👻 Spooky Costumes 👻</h2>
+        <p>
+          Halloween, rooted in ancient traditions, has evolved over the years
+          from its origins involving costumes and festivities linked to
+          supernatural beings to a celebration that includes a diverse range of
+          themes, characters, and activities. Key customs include dressing in
+          costumes, trick-or-treating, and various games that date back
+          centuries. Today, Halloween also encompasses unique practices such as
+          haunted attractions, themed foods, and Christian observances,
+          reflecting a blend of cultural influences and modern adaptations.
+        </p>
+
+        <h3>Key Points:</h3>
+
+        <ul>
+          <li>
+            <strong>Costume Traditions:</strong>
+            <ul>
+              <li>
+                Early costumes were based on figures like vampires, ghosts, and
+                witches.
+              </li>
+              <li>
+                The concept of "guising" in Scotland and Ireland involved
+                children dressing up and going door-to-door, similar to modern
+                trick-or-treating.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Historical Context:</strong>
+            <ul>
+              <li>
+                In the 19th century, Halloween costumes became popular in
+                parties and trick-or-treating, especially in the U.S.
+              </li>
+              <li>
+                Costumes have since expanded to include fictional characters and
+                celebrities.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Games and Activities:</strong>
+            <ul>
+              <li>
+                Traditional games include apple bobbing and divination rituals
+                to predict future spouses.
+              </li>
+              <li>
+                Activities often involve food items hidden in cakes, leading to
+                fortunes based on what participants find.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Haunted Attractions:</strong>
+            <ul>
+              <li>
+                Haunted houses began in the U.S. in the 1930s, becoming a major
+                part of Halloween festivities.
+              </li>
+              <li>
+                Theme parks have popularized Halloween events globally, such as
+                Universal Studios' Halloween Horror Nights.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Food:</strong>
+            <ul>
+              <li>
+                Halloween foods often include pumpkin-related treats, candy
+                apples, and traditional items like barmbrack, which contains
+                charms predicting fortune.
+              </li>
+              <li>
+                Decorations for Halloween foods typically feature spooky motifs.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Christian Observances:</strong>
+            <ul>
+              <li>
+                Some Christians view Halloween as a time for reflection on
+                mortality and the lives of saints.
+              </li>
+              <li>
+                Various denominations observe Halloween through vigils and
+                special church events, with some rejecting it due to its pagan
+                origins.
+              </li>
+            </ul>
+          </li>
+          <li>
+            <strong>Modern Perspectives:</strong>
+            <ul>
+              <li>
+                While some embrace Halloween as a fun celebration, others
+                express concern over its association with the occult or
+                trivialization of serious themes.
+              </li>
+              <li>
+                Christian responses range from embracing Halloween as a
+                family-friendly event to organizing alternative celebrations
+                like "Saint Fest."
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </section>
+      <hr />
+
+      <!-- CONTACT SECTION -->
+      <section id="contact" class="contact-section fade-in">
+        <div class="contact-left">
+          <h2 class="sub-title">Contact Me</h2>
+          <p><i class="fa-regular fa-paper-plane"></i>anupbhar341@gmail.com</p>
+          <p><i class="fa-solid fa-phone"></i>+918101804748</p>
+          <div class="social-icons">
+            <a href="https://www.linkedin.com/in/bhar-anup/" target="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <a href="https://github.com/anupbhar341" target="_blank"
+              ><i class="fa-brands fa-github"></i
+            ></a>
+            <a href="https://wa.me/+918101804748" target="_blank"
+              ><i class="fa-brands fa-whatsapp"></i
+            ></a>
+            <a href="https://www.facebook.com/anup.bhar.315" target="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a href="https://www.instagram.com/_anupbhar.341_/" target="_blank"
+              ><i class="fa-brands fa-instagram"></i
+            ></a>
+          </div>
+        </div>
+
+        <div class="contact-right">
+          <form name="submit-to-google-sheet">
+            <input type="text" name="Name" placeholder="Your Name" required />
+            <input
+              type="email"
+              name="Email"
+              placeholder="Your Email"
+              required
+            />
+            <textarea
+              name="Message"
+              rows="4"
+              placeholder="Your Message for Me"
+            ></textarea>
+            <button type="submit" class="btn">Submit</button>
+          </form>
+          <span id="msg"></span>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <p>
+        Copyright &copy; Anup. Made with
+        <i class="fa-solid fa-heart"></i> by Anup
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
